@@ -1,7 +1,5 @@
 #!/bin/sh -e
 
-scripts/install-deps.sh
-
 export CGO_ENABLED=0 
 export GOOS=linux 
 
