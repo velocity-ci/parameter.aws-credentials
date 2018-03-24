@@ -44,7 +44,7 @@ func getCredentialsFromSts() (export *exported, expires time.Time, _ error) {
 
 func getCredentialsFromTask(httpClient *http.Client) (export *exported, expires time.Time, _ error) {
 	relativeURI := os.Getenv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI")
-	if len(relativeURI) > 0 {
+	if len(relativeURI) < 1 {
 		return nil, expires, errors.New("missing AWS_CONTAINER_CREDENTIALS_RELATIVE_URI environment variable")
 	}
 
@@ -137,7 +137,6 @@ func main() {
 		out.Error = "no valid response from metadata endpoints"
 		out.Exports = &exported{}
 	}
-
 	o, _ := json.Marshal(out)
 
 	fmt.Printf("%s", o)
