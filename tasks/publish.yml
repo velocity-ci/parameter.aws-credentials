@@ -2,7 +2,7 @@ description: "Builds and publishes binary to GitHub Releases"
 name: publish
 
 parameters:
-  - use: https://github.com/velocity-ci/parameter.aws-ssm/releases/download/0.1.0/aws-ssm
+  - use: https://github.com/velocity-ci/parameter.aws-ssm/releases/download/0.1.1/aws-ssm
     arguments:
       name: /velocityci/github-release-token
     exports:

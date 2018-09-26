@@ -139,7 +139,7 @@ func main() {
 	}
 	o, _ := json.Marshal(out)
 
-	fmt.Printf("%s", o)
+	fmt.Printf("%s\n", o)
 
 }
 
